@@ -1,0 +1,154 @@
+/**
+ * @file: profile.config.ts
+ * @author: Vineet Dwivedi
+ * @summary: Aspiring Frontend Developer | React.js Enthusiast | Student at JNCT
+ */
+
+// --------------------------------------------------
+// 1. CORE DEPENDENCIES & SKILLS
+// --------------------------------------------------
+
+const TECH_STACK = {
+  frontend: [
+    "React.js",       // 95%
+    "JavaScript ES6+",// 90%
+    "HTML5",          // 95%
+    "CSS3",           // 90%
+    "TailwindCSS",    // 85%
+  ],
+  stateManagement: [
+    "Context API",    // 85%
+    "React Hooks",    // 90%  useState, useEffect, useContext, useReducer
+  ],
+  apisAndAsync: [
+    "RESTful APIs",   // 80%
+    "Axios",          // 80%
+    "Fetch API",      // 85%
+    "Async/Await",    // 85%
+  ],
+  tools: [
+    "Git",            // 85%
+    "GitHub",         // 85%
+    "Vercel",         // 80%
+    "Netlify",        // 75%
+    "NPM",            // 80%
+    "VS Code",        // 95%
+  ],
+  concepts: [
+    "Responsive Design",
+    "Mobile-First Design",
+    "Component-Driven Architecture",
+    "DOM Manipulation",
+    "React Router",
+    "Clean Code",
+    "Dark/Light Theme Management",
+  ]
+};
+
+// --------------------------------------------------
+// 2. EXPERIENCE LOG (Reverse Chronological)
+// --------------------------------------------------
+
+class ProfessionalHistory {
+
+  /**
+   * CURRENT ROLE
+   * @period November 2024 – Present
+   */
+  public async OpenSource_PersonalProjects(): Promise<Impact> {
+    const role = "Open Source Developer & Personal Projects";
+
+    // Key Achievements
+    const apps = await this.build({ count: 3, type: "production-grade React apps" });
+    const patterns = this.mastered(["Custom Hooks", "Context API", "React Router"]);
+    const deployment = await this.deploy({ platforms: ["Vercel", "Netlify"], ci: true });
+    const versionControl = this.maintain({
+      tool: "Git & GitHub",
+      strategy: "Structured commits + branching"
+    });
+
+    return { role, apps, patterns, deployment, versionControl };
+  }
+}
+
+// --------------------------------------------------
+// 3. PROJECT PORTFOLIO
+// --------------------------------------------------
+
+interface Project {
+  name: string;
+  techStack: string[];
+  highlights: string[];
+  links: { github: string; live: string };
+}
+
+const portfolio: Project[] = [
+  {
+    name: "JobSphere – Job Discovery Dashboard",
+    techStack: ["React.js", "Context API", "Tailwind CSS", "React Router", "localStorage"],
+    highlights: [
+      "Production-ready job search platform with user authentication & protected routes",
+      "Global state management using Context API → user sessions, job listings, app tracking",
+      "Fully responsive UI with dark/light theme toggle (mobile, tablet, desktop)",
+      "Job application workflows → save, status tracking, persistent user preferences",
+    ],
+    links: { github: "#", live: "#" }
+  },
+  {
+    name: "User Explorer Dashboard",
+    techStack: ["React.js", "RESTful API", "Axios", "React Hooks", "localStorage"],
+    highlights: [
+      "Interactive user management dashboard with reusable card, modal & nav components",
+      "Dynamic RESTful API integration with error handling & loading states",
+      "Advanced theme management with localStorage persistence across sessions",
+      "Performance optimized via React Hooks → fast load times & smooth interactions",
+    ],
+    links: { github: "#", live: "#" }
+  },
+  {
+    name: "Daily Planner Application",
+    techStack: ["Vanilla JavaScript", "HTML5", "CSS3", "DOM Manipulation", "localStorage"],
+    highlights: [
+      "Comprehensive productivity app with extensive DOM manipulation",
+      "Pomodoro timer + session tracking + water intake + task management",
+      "Responsive interface with motivational quotes & note-taking functionality",
+    ],
+    links: { github: "#", live: "#" }
+  }
+];
+
+// --------------------------------------------------
+// 4. ACADEMIC BACKGROUND
+// --------------------------------------------------
+
+const education = new Map<string, {
+  degree: string;
+  status: string;
+  details?: string;
+}>([
+  ["Jawaharlal Nehru College of Technology", {
+    degree: "B.Tech in Computer Science",
+    status: "8th Semester (Ongoing) | Expected: May 2026",
+    details: "Coursework: Data Structures & Algorithms, OOP, DBMS, Computer Networks, OS, Software Engineering"
+  }],
+  ["Sheriyans Coding School", {
+    degree: "Web Development Cohort 2.0",
+    status: "Ongoing",
+    details: "Intensive: React.js, Modern JavaScript, Production-level Frontend Development"
+  }]
+]);
+
+// --------------------------------------------------
+// 5. CONTACT & LINKS
+// --------------------------------------------------
+
+const CONTACT = {
+  phone: "+91 8349877758",
+  email: "vineetdwivedi409@gmail.com",
+  location: "Madhya Pradesh, India",
+  linkedin: "linkedin.com/in/vineet-dwivedi",
+  github: "github.com/vineet-dwivedi",
+};
+
+// --------------------------------------------------
+export default { TECH_STACK, ProfessionalHistory, portfolio, education, CONTACT };

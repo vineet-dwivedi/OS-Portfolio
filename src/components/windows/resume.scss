@@ -1,0 +1,122 @@
+.resume-window {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+
+  border-radius: 1.5rem;
+  overflow: hidden;
+
+  font-family: "Inter", system-ui, sans-serif;
+  animation: fadeUp 0.6s ease-out both;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 2rem 4rem rgba(0, 0, 0, 0.28),
+    inset 0 0 0.5rem rgba(255, 255, 255, 0.05);
+}
+
+.resume-window iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 1rem;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    ),
+    rgba(0, 0, 0, 0.4);
+
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 1.5rem 3rem rgba(0, 0, 0, 0.35);
+
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Glassy scrollbars for iframe */
+.resume-window iframe::-webkit-scrollbar {
+  width: 0.6rem;
+  height: 0.6rem; /* horizontal scrollbar */
+}
+
+.resume-window iframe::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.resume-window iframe::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.resume-window iframe::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .resume-window {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-window {
+    padding: 1rem;
+  }
+
+  .resume-window iframe {
+    border-radius: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-window {
+    padding: 0.75rem;
+  }
+
+  .resume-window iframe {
+    border-radius: 0.75rem;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

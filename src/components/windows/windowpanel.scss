@@ -1,0 +1,139 @@
+.window-panel {
+  padding: 1.8rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: #eee;
+
+  overflow-y: auto;   // vertical scroll only
+  overflow-x: hidden; // disable horizontal scroll
+
+  /* Glassy scrollbar */
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.45);
+  }
+}
+
+/* HERO */
+.hero {
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    word-break: break-word; // prevent horizontal overflow
+  }
+
+  p {
+    opacity: 0.6;
+    font-size: 0.95rem;
+    word-break: break-word;
+  }
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  .stat {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    padding: 1rem;
+    backdrop-filter: blur(16px);
+
+    span {
+      font-size: 0.7rem;
+      opacity: 0.5;
+      letter-spacing: 0.08em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+      word-break: break-word;
+    }
+  }
+}
+
+/* APPS */
+.apps {
+  h3 {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-bottom: 0.6rem;
+    word-break: break-word;
+  }
+
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+
+    button {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      border-radius: 0.9rem;
+      padding: 0.8rem;
+      color: #fff;
+      cursor: pointer;
+      backdrop-filter: blur(14px);
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.14);
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .app-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .app-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+
+  .apps h3 {
+    font-size: 0.8rem;
+  }
+}

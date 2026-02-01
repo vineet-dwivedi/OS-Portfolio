@@ -1,0 +1,95 @@
+$blur: 2rem;
+$glass-bg: rgba(0, 0, 0, 0.45);
+$glass-border: rgba(255, 255, 255, 0.15);
+$glow-color: rgba(0, 255, 0, 0.5);
+$transition-speed: 0.3s;
+$window-radius: 1rem;
+
+.cli-window {
+  width: 100%;
+  height: 100%;
+  border-radius: $window-radius;
+  overflow: auto;
+  backdrop-filter: blur($blur);
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  color: #00ff00;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+
+  .terminal {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 0, 0.25);
+    border-radius: 6px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    transition: background $transition-speed ease, transform $transition-speed ease;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 0, 0.45);
+    transform: scaleY(1.05);
+  }
+
+  /* Terminal prompt & input glow */
+  .react-console-input {
+    color: #00ff00;
+    caret-color: #00ff00;
+  }
+
+  .react-console-output {
+    p {
+      color: #00ff00;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .cli-window {
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    font-size: 0.85rem;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+    }
+  }
+}
