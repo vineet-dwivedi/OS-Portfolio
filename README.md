@@ -1,4 +1,5 @@
 # 🚀 VineetOS — macOS-Inspired Cinematic Portfolio
+I'm very happy to share this project with u all...
 
 > A fully interactive **macOS-style portfolio OS** built using **React + SCSS**,  
 > featuring glassmorphism windows, animated dock, cinematic intro, and real app interactions.
